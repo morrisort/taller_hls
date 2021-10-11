@@ -9,6 +9,7 @@
 ## Requerimientos
 
 * Vitis 2020.2 (No deberían haber mayores diferencias con otras versiones).
+* Ser capaz de crear un proyecto en Vitis HLS, correr un testbench y sintetizar.
 * FPGA con CPU, en este caso se utilizará la [Zynq UltraScale+ MPSoC ZCU104](https://www.xilinx.com/products/boards-and-kits/zcu104.html#).
 
 ## Multiplicación de Matrices con HLS
@@ -23,5 +24,5 @@
 
 * [Documentacion general de Vitis HLS.](https://www.xilinx.com/html_docs/xilinx2020_2/vitis_doc/gnq1597858079367.html)
 * [Documentacion de pragmas.](https://www.xilinx.com/html_docs/xilinx2020_2/vitis_doc/hls_pragmas.html#okr1504034364623)
-* [Github con pequeños ejemplos para diferentes pragmas](https://github.com/Xilinx/SDSoC_Examples/tree/master/cpp/getting_started) (está desactualizado pero creo que igual es útil).
+* [Github con pequeños ejemplos para diferentes pragmas](https://github.com/Xilinx/SDSoC_Examples/tree/master/cpp/getting_started) (está desactualizado pero creo que igual es útil ya que tiene ejempos pequeños para varios pragmas).
 
