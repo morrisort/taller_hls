@@ -3,7 +3,7 @@
 En esta sección veremos que es lo que pasa cuando se utilizara de sintetizar un código que no fue pensado para HLS, particularmente se va a trabajar con un multiplicador de matrices. 
 
 
-Tal cual como está el código se puede correr el testbench exitosamente con tamaños diferente. Al sintetizar se obtienen los siguientes resultados:
+Tal cual como está el código, se puede correr el testbench exitosamente con tamaños diferentes. Al sintetizar se obtienen los siguientes resultados:
 
 ![image info](./Imagenes/noInfo.png)
 
