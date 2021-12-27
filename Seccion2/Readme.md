@@ -142,7 +142,7 @@ Se obtienen los siguientes resultados:
 
 ![Latency](./Imagenes/latency.png)
 
-La latencia de 'loopRow_loopCol' ahora es de 17 y la latencia total aumentó a 273.
+La latencia de 'loopRow_loopCol' ahora es de 17 y la latencia total aumentó a 273. Para las siguientes secciones no se va a utilizar este pragma.
 
 ---
 
@@ -203,5 +203,6 @@ Se obtienen los siguientes resultados:
 
 ![Síntesis con punto fijo](./Imagenes/fixedPoint.png)
 
+Nótese que ya no se están ocupando DSPs. También se utilizan menos LUT y más FF que con *int*.
 
 Ahora pasaremos a la siguiente [sección](../Seccion3/Readme.md) donde veremos como crear un proyecto con Vitis para multiplicar matrices en una FPGA.
