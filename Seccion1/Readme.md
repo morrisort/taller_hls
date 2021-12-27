@@ -31,6 +31,6 @@ Al sintetizar con estos pragmas se obtiene lo siguiente:
 ![image info](./Imagenes/LatencyInfo.png)
 
 
-Ahora pasaremos a la siguiente [sección](../Seccion2/Seccion2.md) donde trabajaremos con matrices de tamaño fijo.
+Ahora pasaremos a la siguiente [sección](../Seccion2/Readme.md) donde trabajaremos con matrices de tamaño fijo.
 
 *Nota: Este código no pasa la co-simulación. Esto se puede deber a que el acceso a las matrices no es secuencial (particularmente B)*
