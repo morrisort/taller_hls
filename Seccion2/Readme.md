@@ -110,9 +110,39 @@ void mmultHW (T A[M][N], T B[N][P], T C[M][P]){
 
 Se obtienen los siguientes resultados:
 
-![image info](./Imagenes/array_partition.png)
+![Array Partition](./Imagenes/array_partition.png)
 
 Con esto llegamos a una latencia solo un poco mejor que con solo UNROLL, pero con un uso de recursos un orden de magnitud menor. Bajo  *HW Interfaces* se puede ver que hay más memorias para cada matriz, 16 para cada una. También se puede observar un mayor paralelismo en la vista de análisis.
+
+---
+## Latencia
+
+En algunos casos podria ser útil indicar la latencia que se quiere obtener, esto se hace con el pragma [LATENCY](https://www.xilinx.com/html_docs/xilinx2020_2/vitis_doc/hls_pragmas.html#rym1504034365159). No siempre es útil, ya que en este caso no se puede poner para indicar cuanta latencia para el módulo completo. El pragma se puede utilizar luego de el pragma PIPELINE para indicar la latencia de una iteración de este:
+
+```
+void mmultHW (T A[M][N], T B[N][P], T C[M][P]){
+#pragma HLS ARRAY_PARTITION variable=A complete dim=2
+#pragma HLS ARRAY_PARTITION variable=B complete dim=1
+#pragma HLS ARRAY_PARTITION variable=C complete dim=1
+    loopRow:for (int row = 0; row < M; row++) {
+         loopCol:for (int col = 0; col < P; col++) {
+#pragma HLS pipeline
+#pragma HLS LATENCY min=16 max=50
+              T result = 0;
+              ProductoPunto:for (int k = 0; k < N; k++) {
+#pragma HLS unroll
+                   result += A[row][k] * B[k][col];
+              }
+              C[row][col] = result;
+         }
+    }
+}
+```
+Se obtienen los siguientes resultados:
+
+![Latency](./Imagenes/latency.png)
+
+La latencia de 'loopRow_loopCol' ahora es de 17 y la latencia total aumentó a 273.
 
 ---
 
