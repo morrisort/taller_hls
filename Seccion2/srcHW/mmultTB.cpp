@@ -14,7 +14,7 @@ int compare(T* gold, T* result, int size, T th);
 
 int main (){
 	int errors = 0;
-	int tests = 1;
+	int tests = 100;
 	
 
 	// [M*N] x [N*P] = [M*P]
@@ -25,6 +25,9 @@ int main (){
 	T th = 0.001;
 	T min = 0;
 	T max = 20;
+
+	cout << "Matrix multiplication: ["<< M <<"*"<<N << "] x ["<< N << "*" << P << "]"<< endl;
+
 	for (int i=0; i<tests; i++){
 		genRandArray(min, max, M*N, A[0]);
 		genRandArray(min, max, N*P, B[0]);
@@ -33,9 +36,9 @@ int main (){
 		mmultHW (A, B, C_HW);
 
 		errors = compare(C_SW[0], C_HW[0], M*P, th);
-
-		cout << "Test "<< i <<" number of errors: " << errors << endl;
 	}
+
+	cout <<"Number of errors: " << errors << endl;
 
 	return errors;
 }
