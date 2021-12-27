@@ -1,6 +1,6 @@
 # Sección 2: Multiplicación de Matrices con tamaño fijo
 
-En esta sección trabajaremos con multiplicación de matrices de tamaño fijo, 16x16 int, y veremos los efectos de diferentes pragmas. El código sin pragmas es el siguiente:
+En esta sección trabajaremos con multiplicación de matrices de tamaño fijo, 16x16 int, y veremos los efectos de diferentes pragmas. El código sin pragmas es el [siguiente](./srcHW/mmultHW.cpp):
 
 ```
 void mmultHW (T A[M][N], T B[N][P], T C[M][P]){
@@ -128,7 +128,7 @@ Se obtienen los siguientes resultados:
 
 ![Síntesis con float](./Imagenes/float.png)
 
-Pareciera ser que esta latencia es aceptable, pero al observar la ventana de análisis nos encontramos que las sumas se están haciendo de forma secuencial. Esta síntesis es esperable ya que el orden de las operaciones cambia los resultados ligeramente y Vitis HLS por defecto los implementa para que den el mismo resultado que en CPU. 
+Pareciera ser que esta latencia es aceptable, pero al observar la ventana de análisis nos encontramos que las sumas se están haciendo de forma secuencial. Esta síntesis es esperable ya que, con punto flotante, el orden de las operaciones cambia los resultados ligeramente y Vitis HLS por defecto los implementa para que den el mismo resultado que en CPU. 
 
 Para implementar un adder tree con punto flotante hay dos alternativas, escribir un código C que sume los elementos de un vector de a pares o cambiar la configuración de Vitis para poder implementar un adder tree. Aqui utilizaremos la segunda opción.
 
@@ -164,3 +164,6 @@ typedef ap_fixed<32,12,AP_RND > T;
 Se obtienen los siguientes resultados:
 
 ![Síntesis con punto fijo](./Imagenes/fixedPoint.png)
+
+
+Ahora pasaremos a la siguiente [sección](../Seccion3/Seccion3.md) donde veremos como crear un proyecto con Vitis para multiplicar matrices en una FPGA.

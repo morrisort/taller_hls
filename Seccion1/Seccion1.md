@@ -1,6 +1,6 @@
 # Sección 1: Problemas con Código C Tradicional
 
-En esta sección veremos que es lo que pasa cuando se utilizara de sintetizar un código que no fue pensado para HLS, particularmente se va a trabajar con un multiplicador de matrices. 
+En esta sección veremos que es lo que pasa cuando se trata de sintetizar un código que no fue pensado para HLS, particularmente se va a trabajar con un multiplicador de matrices que se encuentra [aquí](./srcHW/mmultHW.cpp). 
 
 
 Tal cual como está el código, se puede correr el testbench exitosamente con tamaños diferentes. Al sintetizar se obtienen los siguientes resultados:
