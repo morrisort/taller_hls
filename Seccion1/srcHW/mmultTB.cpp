@@ -18,7 +18,7 @@ int compare(T* gold, T* result, int size, T th);
 
 int main (){
 	int errors = 0;
-	int tests = 1;
+	int tests = 100;
 	
 
 	// [M*N] x [N*P] = [M*P]
@@ -29,6 +29,7 @@ int main (){
 	T th = 0.000001;
 	T min = 0;
 	T max = 2000;
+	cout << "Matrix multiplication: ["<< M <<"*"<<N << "] x ["<< N << "*" << P << "]"<< endl;
 	for (int i=0; i<tests; i++){
 		genRandArray(min, max, M*N, A);
 		genRandArray(min, max, N*P, B);
@@ -38,12 +39,18 @@ int main (){
 
 		errors += compare(C_SW, C_HW, M*P, th);
 
-		cout << "Test "<< i <<" number of errors: " << errors << endl;
+
+	}
+	cout <<"Number of errors: " << errors << endl;
+	if (errors){
+		return errors;
 	}
 
 	// bigger!
 	T D[4*M*N], E[4*N*P];
 	T F_HW[4*M*P], F_SW[4*M*P];
+	errors = 0;
+	cout << "Matrix multiplication: ["<< 2*M <<"*"<<2*N << "] x ["<< 2*N << "*" << 2*P << "]"<< endl;
 	for (int i=0; i<tests; i++){
 		genRandArray(min, max, 4*M*N, D);
 		genRandArray(min, max, 4*N*P, E);
@@ -53,8 +60,8 @@ int main (){
 
 		errors += compare(F_SW, F_HW, 2*M*P, th);
 
-		cout << "Test "<< i <<" number of errors: " << errors << endl;
 	}
+	cout <<"Number of errors: " << errors << endl;
 	return errors;
 }
 
