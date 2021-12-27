@@ -75,11 +75,19 @@ Se obtienen los siguientes resultados:
 
 Al comparar los resultados con cuando no utilizamos pragmas se evidencia que estas son las mismas optimizaciones que hace Vitis HLS por defecto. 
 
+Bajo *Issue Type* dice que hay una violación de intervalo, esto se debe a que no logró llegar al intervalo deseado (que por defecto es II=1), se puede cambiar el intervalo del pipeline agregando `II=<int>` al pragma.
+
+Con `#pragma HLS pipeline II=10` se obtienen los siguientes resultados:
+
+![Síntesis con pipeline y intervalo II=10](./Imagenes/pipelineInterval.png)
+
+Ya no hay *Issue* y se puede ver que la latencia y el intervalo aumentaron. Para las siguientes secciones se dejará el intervalo por defecto, II=1.
+
 ---
 
 ## Array Partition
 
-También se puede modificar como es el acceso a las memorias donde se guardan las matrices. En los ejemplos anteriores se utiliza una memoria tipo "dual port", es decir se accede a dos elementos al mismo tiempo. Para esta aplicación seria ideal acceder a todos los elementos de cada fila para la matriz A y columna para B y C. Para lograr esto usaremos el pragma [ARRAY_PARTITION](https://www.xilinx.com/html_docs/xilinx2021_1/vitis_doc/hls_pragmas.html#gle1504034361378) de la siguiente manera: 
+También se puede modificar como es el acceso a las memorias donde se guardan las matrices. En los ejemplos anteriores se utiliza una memoria tipo "dual port" (se puede ver bajo *HW Interfaces* en el reporte de síntesis), es decir se accede a dos elementos al mismo tiempo. Para esta aplicación seria ideal acceder a todos los elementos de cada fila para la matriz A y columna para B y C. Para lograr esto usaremos el pragma [ARRAY_PARTITION](https://www.xilinx.com/html_docs/xilinx2021_1/vitis_doc/hls_pragmas.html#gle1504034361378) de la siguiente manera: 
 
 ```
 void mmultHW (T A[M][N], T B[N][P], T C[M][P]){
@@ -104,7 +112,7 @@ Se obtienen los siguientes resultados:
 
 ![image info](./Imagenes/array_partition.png)
 
-Con esto llegamos a una latencia solo un poco mejor que con solo UNROLL, pero con un uso de recursos un orden de magnitud menor. Ahora hay más memorias para cada matriz, 16 para cada una. También se puede observar un mayor paralelismo en la vista de análisis.
+Con esto llegamos a una latencia solo un poco mejor que con solo UNROLL, pero con un uso de recursos un orden de magnitud menor. Bajo  *HW Interfaces* se puede ver que hay más memorias para cada matriz, 16 para cada una. También se puede observar un mayor paralelismo en la vista de análisis.
 
 ---
 
