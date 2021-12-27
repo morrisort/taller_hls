@@ -24,7 +24,7 @@ int main (){
 	T diff;
 	T th = 0.001;
 	T min = 0;
-	T max = 20;
+	T max = 300;
 
 	cout << "Matrix multiplication: ["<< M <<"*"<<N << "] x ["<< N << "*" << P << "]"<< endl;
 
@@ -35,7 +35,7 @@ int main (){
 		mmultSW (A, B, C_SW);
 		mmultHW (A, B, C_HW);
 
-		errors = compare(C_SW[0], C_HW[0], M*P, th);
+		errors += compare(C_SW[0], C_HW[0], M*P, th);
 	}
 
 	cout <<"Number of errors: " << errors << endl;
