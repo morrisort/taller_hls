@@ -166,4 +166,4 @@ Se obtienen los siguientes resultados:
 ![Síntesis con punto fijo](./Imagenes/fixedPoint.png)
 
 
-Ahora pasaremos a la siguiente [sección](../Seccion3/Seccion3.md) donde veremos como crear un proyecto con Vitis para multiplicar matrices en una FPGA.
+Ahora pasaremos a la siguiente [sección](../Seccion3/Readme.md) donde veremos como crear un proyecto con Vitis para multiplicar matrices en una FPGA.
