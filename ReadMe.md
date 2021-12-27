@@ -14,9 +14,9 @@
 
 ## Multiplicación de Matrices con HLS
 
-* [Sección 1: Problemas con Código C Tradicional.](./Seccion1/Seccion1.md)
+* [Sección 1: Problemas con Código C Tradicional.](./Seccion1/Readme.md)
 
-* [Sección 2: Multiplicación de Matrices con Tamaño Fijo.](./Seccion2/Seccion2.md)
+* [Sección 2: Multiplicación de Matrices con Tamaño Fijo.](./Seccion2/Readme.md)
 
 * Sección 3: Integración FPGA+CPU.
 
