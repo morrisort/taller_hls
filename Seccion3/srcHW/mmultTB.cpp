@@ -36,8 +36,10 @@ int main (){
 
 		cout << "Test "<< i <<" number of errors: " << errors << endl;
 	}
-
-	return errors;
+	if (errors){
+		return 1;
+	}
+	return 0;
 }
 
 
