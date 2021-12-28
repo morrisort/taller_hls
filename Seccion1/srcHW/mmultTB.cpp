@@ -43,7 +43,7 @@ int main (){
 	}
 	cout <<"Number of errors: " << errors << endl;
 	if (errors){
-		return errors;
+		return 1;
 	}
 
 	// bigger!
@@ -62,7 +62,10 @@ int main (){
 
 	}
 	cout <<"Number of errors: " << errors << endl;
-	return errors;
+	if (errors){
+		return 1;
+	}
+	return 0;
 }
 
 
