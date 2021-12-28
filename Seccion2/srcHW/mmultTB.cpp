@@ -14,7 +14,7 @@ int compare(T* gold, T* result, int size, T th);
 
 int main (){
 	int errors = 0;
-	int tests = 100;
+	int tests = 1;
 	
 
 	// [M*N] x [N*P] = [M*P]
@@ -40,7 +40,8 @@ int main (){
 
 	cout <<"Number of errors: " << errors << endl;
 
-	return errors;
+	if (errors) return 1;
+	else return 0;
 }
 
 
