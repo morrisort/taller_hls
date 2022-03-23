@@ -4,8 +4,8 @@ En esta sección realizaremos multiplicaciones de matrices en FPGA y compararemo
 
 ## Preparación
 
-* Descargar el archivo [ZCU104 Base 2020.2](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/embedded-platforms/2020-2.html)
-* Descargar el archivo [ ZYNQMP common image](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/embedded-platforms/2020-2.html) y luego, en el directorio descargado, correr el siguiente comando `./sdk.sh -y -dir . -p`.
+* Descargar el archivo [ZCU104 Base 2020.2](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/embedded-platforms/archive-vitis-embedded.html)
+* Descargar el archivo [ ZYNQMP common image](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/embedded-platforms/archive-vitis-embedded.html) y luego, en el directorio descargado, correr el siguiente comando `./sdk.sh -y -dir . -p`.
 
 ## Cambios al Código
 
