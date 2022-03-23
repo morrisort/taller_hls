@@ -21,7 +21,7 @@ Al abrir Vitis (preferiblemente en un nuevo workspace), seleccionar *Create Appl
 
 ![Platform](./Imagenes/Platform.png)
 
-Luego apretar *next* y en *Application project name* dar el nombre "mmult" (puede ser otro nombre pero no va a concordar con el resto del documento) y apretar *next.
+Luego apretar *next* y en *Application project name* dar el nombre "mmult" (puede ser otro nombre pero no va a concordar con el resto del documento) y apretar *next*.
 
 En la ventana *Domain* se deben indicar los archivos que se crearon en la imagen común que se descargó. 
 * En *Sysroot path*:  `<PATH_TO_COMMON_IMAGE>/xilinx-zynqmp-common-v2020.2/ir/sysroots/aarch64-xilinx-linux`
